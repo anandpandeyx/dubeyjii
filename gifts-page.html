@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Gifts for Ayushi 💝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffd5e5 0%, #ffe5f0 50%, #fff0f5 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated hearts border at top */
+        .hearts-border {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+            animation: sway 3s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        .hearts-border::before {
+            content: '💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍';
+            font-size: clamp(16px, 3vw, 24px);
+            letter-spacing: 15px;
+            opacity: 0.6;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Floating hearts decoration */
+        .floating-heart {
+            position: fixed;
+            font-size: clamp(20px, 4vw, 40px);
+            opacity: 0.5;
+            animation: floatAround 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .heart-1 { top: 15%; right: 10%; animation-delay: 0s; }
+        .heart-2 { bottom: 20%; left: 8%; animation-delay: 1s; }
+        .heart-3 { top: 60%; right: 15%; animation-delay: 2s; }
+        .heart-4 { top: 40%; left: 12%; animation-delay: 3s; }
+        .heart-5 { top: 30%; left: 5%; animation-delay: 4s; font-size: clamp(25px, 5vw, 50px); }
+        .heart-6 { bottom: 30%; right: 8%; animation-delay: 5s; font-size: clamp(18px, 4vw, 35px); }
+        .heart-7 { top: 70%; left: 20%; animation-delay: 6s; }
+        .heart-8 { top: 25%; right: 25%; animation-delay: 7s; font-size: clamp(22px, 4.5vw, 45px); }
+
+        @keyframes floatAround {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px) rotate(10deg); 
+            }
+            50% { 
+                transform: translateY(-15px) translateX(-20px) rotate(-5deg); 
+            }
+            75% { 
+                transform: translateY(-40px) translateX(15px) rotate(8deg); 
+            }
+        }
+
+        /* Flowing hearts across screen */
+        .flowing-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .flow-heart {
+            position: absolute;
+            font-size: clamp(15px, 3vw, 30px);
+            opacity: 0;
+            animation: flowUp 8s linear infinite;
+        }
+
+        @keyframes flowUp {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+
+        /* Pink flowers decoration */
+        .flower {
+            position: fixed;
+            font-size: clamp(60px, 12vw, 120px);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .flower-1 { bottom: 50px; left: 30px; }
+        .flower-2 { top: 100px; right: 40px; font-size: clamp(50px, 10vw, 100px); }
+        .flower-3 { bottom: 100px; right: 60px; font-size: clamp(40px, 8vw, 80px); }
+        .flower-4 { top: 50%; left: 5%; font-size: clamp(45px, 9vw, 90px); }
+
+        /* Cute sparkles */
+        .sparkle {
+            position: fixed;
+            font-size: clamp(20px, 4vw, 35px);
+            opacity: 0.4;
+            animation: sparkleAnim 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .sparkle-1 { top: 20%; left: 15%; animation-delay: 0s; }
+        .sparkle-2 { bottom: 25%; right: 20%; animation-delay: 0.5s; }
+        .sparkle-3 { top: 55%; right: 10%; animation-delay: 1s; }
+        .sparkle-4 { top: 45%; left: 8%; animation-delay: 1.5s; }
+
+        @keyframes sparkleAnim {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.3) rotate(180deg); opacity: 0.6; }
+        }
+
+        /* Cupid arrows */
+        .arrow {
+            position: fixed;
+            font-size: clamp(30px, 6vw, 50px);
+            opacity: 0.3;
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .arrow-1 { top: 35%; left: 5%; }
+        .arrow-2 { bottom: 40%; right: 8%; transform: rotate(-45deg); }
+
+        /* Butterflies */
+        .butterfly {
+            position: fixed;
+            font-size: clamp(25px, 5vw, 45px);
+            opacity: 0.4;
+            animation: butterflyFly 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .butterfly-1 { top: 25%; right: 18%; animation-delay: 0s; }
+        .butterfly-2 { bottom: 35%; left: 15%; animation-delay: 3s; }
+
+        @keyframes butterflyFly {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(10deg); }
+            50% { transform: translate(-20px, -50px) rotate(-10deg); }
+            75% { transform: translate(10px, -20px) rotate(5deg); }
+        }
+
+        /* Love text decoration */
+        .love-text {
+            position: fixed;
+            bottom: 80px;
+            right: 50px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: clamp(40px, 8vw, 80px);
+            color: #ff69b4;
+            opacity: 0.5;
+            font-weight: bold;
+            transform: rotate(-5deg);
+            pointer-events: none;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .page-title {
+            text-align: center;
+            font-family: 'Brush Script MT', cursive;
+            color: #ff1493;
+            font-size: clamp(32px, 7vw, 56px);
+            margin-bottom: 20px;
+            margin-top: 60px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #ff69b4;
+            font-size: clamp(16px, 4vw, 22px);
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .gifts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        .next-button {
+            display: block;
+            margin: 50px auto;
+            padding: clamp(15px, 3vw, 20px) clamp(40px, 7vw, 60px);
+            font-size: clamp(18px, 4vw, 24px);
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Brush Script MT', cursive;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .next-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+        }
+
+        .gift-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            border: 3px solid rgba(255, 182, 193, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+        }
+
+        .gift-icon {
+            font-size: clamp(60px, 12vw, 100px);
+            margin-bottom: 20px;
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .gift-title {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff1493;
+            font-size: clamp(24px, 5vw, 32px);
+            margin-bottom: 10px;
+        }
+
+        .gift-description {
+            color: #ff69b4;
+            font-size: clamp(14px, 3vw, 18px);
+            font-style: italic;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .ribbon::before {
+            content: '💝';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 30px;
+            transform: rotate(15deg);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 182, 193, 0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 800px;
+            margin: 80px auto 40px;
+            padding: clamp(30px, 5vw, 50px);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 4px solid #ffb6c1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #ff69b4;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 182, 193, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 182, 193, 0.4);
+            transform: rotate(90deg);
+        }
+
+        /* Letter styles */
+        .letter-content {
+            font-family: 'Georgia', serif;
+            color: #333;
+            line-height: 1.8;
+            font-size: clamp(15px, 3.5vw, 18px);
+            text-align: left;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            text-indent: 30px;
+        }
+
+        .letter-header {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff1493;
+            font-size: clamp(28px, 6vw, 40px);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-family: 'Brush Script MT', cursive;
+            color: #ff69b4;
+            font-size: clamp(20px, 4vw, 28px);
+            margin-top: 30px;
+        }
+
+        /* Memories grid */
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .memory-slot {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ffe5f0 0%, #ffd5e5 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #ffb6c1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .memory-slot.has-image img {
+            display: block;
+        }
+
+        .memory-placeholder {
+            font-size: clamp(40px, 8vw, 60px);
+            opacity: 0.5;
+        }
+
+        .memory-slot.has-image .memory-placeholder {
+            display: none;
+        }
+
+        .memory-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 20px;
+            border-radius: 15px;
+            font-size: clamp(11px, 2.5vw, 13px);
+            color: #ff1493;
+            font-weight: bold;
+            white-space: nowrap;
+            max-width: 90%;
+        }
+
+        /* Video container */
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #ffe5f0 0%, #ffd5e5 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #ffb6c1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            border-radius: 17px;
+        }
+
+        .video-container.has-video video {
+            display: block;
+        }
+
+        .video-placeholder {
+            text-align: center;
+        }
+
+        .video-placeholder .icon {
+            font-size: clamp(60px, 12vw, 100px);
+            opacity: 0.5;
+        }
+
+        .video-placeholder .text {
+            color: #ff69b4;
+            font-size: clamp(16px, 3.5vw, 20px);
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .video-container.has-video .video-placeholder {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .gifts-container {
+                grid-template-columns: 1fr;
+            }
+
+            .memories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modal-content {
+                margin: 60px auto 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .love-text {
+                bottom: 40px;
+                right: 20px;
+            }
+            
+            .flower-1 {
+                bottom: 20px;
+                left: 10px;
+            }
+
+            .flower-2 {
+                top: 80px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowing-hearts" id="flowingHearts"></div>
+    
+    <div class="hearts-border"></div>
+    
+    <div class="floating-heart heart-1">💖</div>
+    <div class="floating-heart heart-2">💗</div>
+    <div class="floating-heart heart-3">💕</div>
+    <div class="floating-heart heart-4">💝</div>
+    <div class="floating-heart heart-5">💘</div>
+    <div class="floating-heart heart-6">❤️</div>
+    <div class="floating-heart heart-7">💓</div>
+    <div class="floating-heart heart-8">💞</div>
+    
+    <div class="flower flower-1">🌸</div>
+    <div class="flower flower-2">🌺</div>
+    <div class="flower flower-3">🌷</div>
+    <div class="flower flower-4">🌼</div>
+    
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-2">⭐</div>
+    <div class="sparkle sparkle-3">💫</div>
+    <div class="sparkle sparkle-4">🌟</div>
+    
+    <div class="arrow arrow-1">💘</div>
+    <div class="arrow arrow-2">💘</div>
+    
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    
+    <div class="love-text">love</div>
+
+    <div class="main-container">
+        <h1 class="page-title">Special Gifts for You, Ayushi 💝</h1>
+        <p class="subtitle">Click on each gift to reveal your surprise...</p>
+
+        <div class="gifts-container">
+            <!-- Gift 1: Love Letter -->
+            <div class="gift-box" onclick="openGift('letter')">
+                <div class="ribbon"></div>
+                <div class="gift-icon">💌</div>
+                <h2 class="gift-title">A Love Letter</h2>
+                <p class="gift-description">From the depths of my heart</p>
+            </div>
+
+            <!-- Gift 2: Memories -->
+            <div class="gift-box" onclick="openGift('memories')">
+                <div class="ribbon"></div>
+                <div class="gift-icon">📸</div>
+                <h2 class="gift-title">Our Memories</h2>
+                <p class="gift-description">Moments we've shared together</p>
+            </div>
+
+            <!-- Gift 3: Video -->
+            <div class="gift-box" onclick="openGift('video')">
+                <div class="ribbon"></div>
+                <div class="gift-icon">🎬</div>
+                <h2 class="gift-title">A Special Video</h2>
+                <p class="gift-description">Made just for you</p>
+            </div>
+        </div>
+
+        <button class="next-button" onclick="goToThankYou()">
+            Continue to Final Message 💕
+        </button>
+    </div>
+
+    <!-- Letter Modal -->
+    <div id="letterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('letter')">&times;</span>
+            <div class="letter-header">💕 To My Dearest Ayushi 💕</div>
+            <div class="letter-content">
+                <p>Ayushi,</p>
+                <p>I do not know how to begin without my heart feeling heavier and softer at the same time. Loving you has been the most beautiful and the most vulnerable thing I have ever done. You have become a part of my everyday thoughts, my silent prayers, my smallest smiles. Even on the hardest days, when everything feels uncertain and distant, the thought of you still feels like home.</p>
+                <p>There are moments when the distance, the situations, the circumstances try to convince me that love should be easier than this. But then I remember your voice, your laughter, the way you look at me, and I realize that nothing meaningful has ever been easy. You are not just someone I love. You are the person my heart chose without fear and without calculation.</p>
+                <p>Sometimes I wish I could hold your hands while reading this to you. I wish I could look into your eyes and tell you how deeply you matter to me. You are the first person I think about when something good happens and the only one I want to talk to when everything feels overwhelming. My days feel incomplete without you in them.</p>
+                <p>If love is about choosing someone every single day, then I choose you. Not just on the days when everything feels perfect, but on the days when we are tired, confused, or hurting. I choose you in the quiet moments and in the storms. I choose you when it is easy and when it is not.</p>
+                <p>This Valentine's Day is not about flowers or grand gestures for me. It is about the promise in my heart that no matter how complicated life becomes, my feelings for you remain simple and true. I love you in a way that scares me because it is real. I love you in a way that makes me stronger and more fragile at the same time.</p>
+                <p>If I could ask for anything today, it would be more time with you, more memories, more chances to grow together. I do not want a perfect story. I just want ours. And I want it for as long as life allows.</p>
+                <p>Happy Valentine's Day, Ayushi. You are my love, my peace, and the part of my heart that I never want to lose.</p>
+                <div class="letter-signature">Forever Yours 💕</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Modal -->
+    <div id="memoriesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('memories')">&times;</span>
+            <div class="letter-header">💕 Our Beautiful Memories 💕</div>
+            <div class="memories-grid">
+                <div class="memory-slot" id="memory1">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">10th March 2025</div>
+                    <img src="10th March 2025.jpeg" alt="10th March 2025">
+                </div>
+                <div class="memory-slot" id="memory2">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">20th March 2025</div>
+                    <img src="20th March 2025.jpeg" alt="20th March 2025">
+                </div>
+                <div class="memory-slot" id="memory3">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">16th July 2025</div>
+                    <img src="16th July 2025.jpeg" alt="16th July 2025">
+                </div>
+                <div class="memory-slot" id="memory4">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">16th October 2025</div>
+                    <img src="16th October 2025.jpeg" alt="16th October 2025">
+                </div>
+                <div class="memory-slot" id="memory5">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">18th December 2025</div>
+                    <img src="18th December 2025.jpeg" alt="18th December 2025">
+                </div>
+                <div class="memory-slot" id="memory6">
+                    <div class="memory-placeholder">📷</div>
+                    <div class="memory-label">First Concert</div>
+                    <img src="First Concert.jpeg" alt="First Concert">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('video')">&times;</span>
+            <div class="letter-header">💕 A Message For You 💕</div>
+            <div class="video-container" id="videoContainer">
+                <div class="video-placeholder">
+                    <div class="icon">🎥</div>
+                    <div class="text">Your special video will appear here</div>
+                </div>
+                <video id="specialVideo" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create flowing hearts
+        function createFlowingHearts() {
+            const container = document.getElementById('flowingHearts');
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '❤️', '💓', '💞'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'flow-heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }, 800);
+        }
+
+        createFlowingHearts();
+
+        function goToThankYou() {
+            window.location.href = 'thank-you-page.html';
+        }
+
+        function openGift(type) {
+            const modal = document.getElementById(type + 'Modal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Functions to add media (you can call these from console or add UI for it)
+        function addMemoryImage(memoryNumber, imageUrl) {
+            const memorySlot = document.getElementById('memory' + memoryNumber);
+            const img = memorySlot.querySelector('img');
+            img.src = imageUrl;
+            memorySlot.classList.add('has-image');
+        }
+
+        function addVideo(videoUrl) {
+            const video = document.getElementById('specialVideo');
+            const container = document.getElementById('videoContainer');
+            video.querySelector('source').src = videoUrl;
+            video.load();
+            container.classList.add('has-video');
+        }
+// Load memory images on page load
+        window.addEventListener('load', function() {
+            addMemoryImage(1, '10th March 2025.jpeg');
+            addMemoryImage(2, '20th March 2025.jpeg');
+            addMemoryImage(3, '16th July 2025.jpeg');
+            addMemoryImage(4, '16th October 2025.jpeg');
+            addMemoryImage(5, '18th December 2025.jpeg');
+            addMemoryImage(6, 'First Concert.jpeg');
+            
+            // Load video
+            addVideo('video.mp4');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You, Ayushi 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffd5e5 0%, #ffe5f0 50%, #fff0f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated hearts border at top */
+        .hearts-border {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+            animation: sway 3s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        .hearts-border::before {
+            content: '💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍 💗 💕 🤍';
+            font-size: clamp(16px, 3vw, 24px);
+            letter-spacing: 15px;
+            opacity: 0.6;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Floating hearts decoration */
+        .floating-heart {
+            position: fixed;
+            font-size: clamp(20px, 4vw, 40px);
+            opacity: 0.5;
+            animation: floatAround 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .heart-1 { top: 15%; right: 10%; animation-delay: 0s; }
+        .heart-2 { bottom: 20%; left: 8%; animation-delay: 1s; }
+        .heart-3 { top: 60%; right: 15%; animation-delay: 2s; }
+        .heart-4 { top: 40%; left: 12%; animation-delay: 3s; }
+        .heart-5 { top: 30%; left: 5%; animation-delay: 4s; font-size: clamp(25px, 5vw, 50px); }
+        .heart-6 { bottom: 30%; right: 8%; animation-delay: 5s; font-size: clamp(18px, 4vw, 35px); }
+        .heart-7 { top: 70%; left: 20%; animation-delay: 6s; }
+        .heart-8 { top: 25%; right: 25%; animation-delay: 7s; font-size: clamp(22px, 4.5vw, 45px); }
+        .heart-9 { top: 10%; left: 30%; animation-delay: 8s; font-size: clamp(20px, 4vw, 38px); }
+        .heart-10 { bottom: 15%; right: 30%; animation-delay: 9s; font-size: clamp(23px, 4.5vw, 42px); }
+
+        @keyframes floatAround {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px) rotate(10deg); 
+            }
+            50% { 
+                transform: translateY(-15px) translateX(-20px) rotate(-5deg); 
+            }
+            75% { 
+                transform: translateY(-40px) translateX(15px) rotate(8deg); 
+            }
+        }
+
+        /* Flowing hearts across screen */
+        .flowing-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .flow-heart {
+            position: absolute;
+            font-size: clamp(15px, 3vw, 30px);
+            opacity: 0;
+            animation: flowUp 8s linear infinite;
+        }
+
+        @keyframes flowUp {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+
+        /* Pink flowers decoration */
+        .flower {
+            position: fixed;
+            font-size: clamp(60px, 12vw, 120px);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .flower-1 { bottom: 50px; left: 30px; }
+        .flower-2 { top: 100px; right: 40px; font-size: clamp(50px, 10vw, 100px); }
+        .flower-3 { bottom: 100px; right: 60px; font-size: clamp(40px, 8vw, 80px); }
+        .flower-4 { top: 50%; left: 5%; font-size: clamp(45px, 9vw, 90px); }
+        .flower-5 { top: 20%; left: 8%; font-size: clamp(35px, 7vw, 70px); }
+
+        /* Cute sparkles */
+        .sparkle {
+            position: fixed;
+            font-size: clamp(20px, 4vw, 35px);
+            opacity: 0.4;
+            animation: sparkleAnim 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .sparkle-1 { top: 20%; left: 15%; animation-delay: 0s; }
+        .sparkle-2 { bottom: 25%; right: 20%; animation-delay: 0.5s; }
+        .sparkle-3 { top: 55%; right: 10%; animation-delay: 1s; }
+        .sparkle-4 { top: 45%; left: 8%; animation-delay: 1.5s; }
+        .sparkle-5 { bottom: 40%; left: 25%; animation-delay: 2s; }
+
+        @keyframes sparkleAnim {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.3) rotate(180deg); opacity: 0.6; }
+        }
+
+        /* Cupid arrows */
+        .arrow {
+            position: fixed;
+            font-size: clamp(30px, 6vw, 50px);
+            opacity: 0.3;
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .arrow-1 { top: 35%; left: 5%; }
+        .arrow-2 { bottom: 40%; right: 8%; transform: rotate(-45deg); }
+        .arrow-3 { top: 60%; right: 12%; transform: rotate(25deg); }
+
+        /* Butterflies */
+        .butterfly {
+            position: fixed;
+            font-size: clamp(25px, 5vw, 45px);
+            opacity: 0.4;
+            animation: butterflyFly 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .butterfly-1 { top: 25%; right: 18%; animation-delay: 0s; }
+        .butterfly-2 { bottom: 35%; left: 15%; animation-delay: 3s; }
+        .butterfly-3 { top: 50%; left: 10%; animation-delay: 6s; }
+
+        @keyframes butterflyFly {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(10deg); }
+            50% { transform: translate(-20px, -50px) rotate(-10deg); }
+            75% { transform: translate(10px, -20px) rotate(5deg); }
+        }
+
+        /* Clouds */
+        .cloud {
+            position: fixed;
+            font-size: clamp(40px, 8vw, 80px);
+            opacity: 0.3;
+            animation: cloudFloat 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .cloud-1 { top: 15%; left: -10%; animation-delay: 0s; }
+        .cloud-2 { top: 60%; right: -10%; animation-delay: 5s; }
+
+        @keyframes cloudFloat {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(100vw); }
+        }
+
+        /* Love text decoration */
+        .love-text {
+            position: fixed;
+            bottom: 80px;
+            right: 50px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: clamp(40px, 8vw, 80px);
+            color: #ff69b4;
+            opacity: 0.5;
+            font-weight: bold;
+            transform: rotate(-5deg);
+            pointer-events: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: clamp(40px, 8vw, 80px) clamp(30px, 6vw, 60px);
+            box-shadow: 0 25px 70px rgba(255, 105, 180, 0.4);
+            text-align: center;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            border: 4px solid rgba(255, 182, 193, 0.6);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-message {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff1493;
+            font-size: clamp(42px, 9vw, 72px);
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.3);
+            animation: heartbeat 2s ease-in-out infinite;
+            line-height: 1.3;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10% { transform: scale(1.05); }
+            20% { transform: scale(1); }
+        }
+
+        .sub-message {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff69b4;
+            font-size: clamp(36px, 7vw, 60px);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .message-text {
+            font-family: 'Georgia', serif;
+            color: #555;
+            font-size: clamp(16px, 3.5vw, 20px);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .hearts-decoration {
+            font-size: clamp(50px, 10vw, 80px);
+            margin: 30px 0;
+            animation: rotateHearts 4s ease-in-out infinite;
+        }
+
+        @keyframes rotateHearts {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff1493;
+            font-size: clamp(24px, 5vw, 36px);
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: clamp(12px, 3vw, 15px) clamp(30px, 6vw, 45px);
+            font-size: clamp(16px, 3.5vw, 20px);
+            background: linear-gradient(135deg, #ffe5f0, #ffd5e5);
+            color: #ff1493;
+            border: 2px solid #ff69b4;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(135deg, #ffd5e5, #ffb6c1);
+        }
+
+        /* Animated heart rain on load */
+        .heart-rain {
+            position: fixed;
+            top: -50px;
+            font-size: clamp(20px, 4vw, 40px);
+            animation: rainDown 4s ease-in forwards;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes rainDown {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 110vh;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .love-text {
+                bottom: 40px;
+                right: 20px;
+            }
+            
+            .flower-1 {
+                bottom: 20px;
+                left: 10px;
+            }
+
+            .flower-2 {
+                top: 80px;
+                right: 20px;
+            }
+
+            .container {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowing-hearts" id="flowingHearts"></div>
+    
+    <div class="hearts-border"></div>
+    
+    <div class="floating-heart heart-1">💖</div>
+    <div class="floating-heart heart-2">💗</div>
+    <div class="floating-heart heart-3">💕</div>
+    <div class="floating-heart heart-4">💝</div>
+    <div class="floating-heart heart-5">💘</div>
+    <div class="floating-heart heart-6">❤️</div>
+    <div class="floating-heart heart-7">💓</div>
+    <div class="floating-heart heart-8">💞</div>
+    <div class="floating-heart heart-9">💗</div>
+    <div class="floating-heart heart-10">💖</div>
+    
+    <div class="flower flower-1">🌸</div>
+    <div class="flower flower-2">🌺</div>
+    <div class="flower flower-3">🌷</div>
+    <div class="flower flower-4">🌼</div>
+    <div class="flower flower-5">🌻</div>
+    
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-2">⭐</div>
+    <div class="sparkle sparkle-3">💫</div>
+    <div class="sparkle sparkle-4">🌟</div>
+    <div class="sparkle sparkle-5">✨</div>
+    
+    <div class="arrow arrow-1">💘</div>
+    <div class="arrow arrow-2">💘</div>
+    <div class="arrow arrow-3">💘</div>
+    
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    <div class="butterfly butterfly-3">🦋</div>
+    
+    <div class="cloud cloud-1">☁️</div>
+    <div class="cloud cloud-2">☁️</div>
+    
+    <div class="love-text">love</div>
+
+    <div class="container">
+        <h1 class="main-message">Thank You, Ayushi 💕</h1>
+        <h2 class="sub-message">I Miss You Kaju</h2>
+        
+        <div class="hearts-decoration">💖 💗 💕</div>
+        
+        <p class="message-text">
+            Every moment with you is a treasure I hold close to my heart.<br>
+            Thank you for being the most wonderful part of my life.<br>
+            Distance means nothing when you mean everything.
+        </p>
+
+        <div class="hearts-decoration">💝 💘 💞</div>
+
+        <p class="signature">Forever and Always 💕</p>
+
+        <a href="gifts-page.html" class="back-button">← Back to Gifts</a>
+    </div>
+
+    <script>
+        // Create flowing hearts
+        function createFlowingHearts() {
+            const container = document.getElementById('flowingHearts');
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '❤️', '💓', '💞'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'flow-heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }, 800);
+        }
+
+        createFlowingHearts();
+
+        // Create heart rain on page load
+        function createHeartRain() {
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '❤️', '💓', '💞'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-rain';
+                    heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 1 + 's';
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 200);
+            }
+        }
+
+        // Trigger heart rain on load
+        window.addEventListener('load', createHeartRain);
+    </script>
+</body>
+</html>
